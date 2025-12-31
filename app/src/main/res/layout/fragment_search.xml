@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout style="@style/PullDownStyle">
+
+        <androidx.core.widget.NestedScrollView style="@style/ScrollViewStyle">
+
+            <com.xuexiang.xui.widget.layout.XUIFrameLayout
+                style="@style/XUILayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                    android:id="@+id/search_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/key"
+                    app:met_hideUnderline="true" />
+
+                <Button
+                    android:id="@+id/search_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/search" />
+
+            </com.xuexiang.xui.widget.layout.XUIFrameLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/config_margin_16dp"
+        android:layout_marginTop="@dimen/config_margin_4dp"
+        android:layout_marginEnd="@dimen/config_margin_16dp"
+        android:layout_marginBottom="@dimen/config_margin_4dp"
+        android:divider="@null"
+        android:dividerHeight="25dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/config_padding_16dp"
+        android:paddingTop="@dimen/config_padding_4dp"
+        android:paddingEnd="@dimen/config_padding_16dp"
+        android:paddingBottom="@dimen/config_padding_8dp"
+        android:scrollbars="none" />
+</LinearLayout>

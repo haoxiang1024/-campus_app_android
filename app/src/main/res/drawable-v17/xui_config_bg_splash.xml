@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--logo-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item android:drawable="@color/xui_config_color_white" />
+
+    <item android:bottom="@dimen/xui_config_app_logo_bottom">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/first" />
+    </item>
+
+</layer-list>

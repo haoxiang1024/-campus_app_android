@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/av_load"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="visible"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallPulseIndicator" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/config_margin_16dp"
+        android:layout_marginTop="@dimen/config_margin_4dp"
+        android:layout_marginEnd="@dimen/config_margin_16dp"
+        android:layout_marginBottom="@dimen/config_margin_4dp"
+        android:divider="@null"
+        android:dividerHeight="25dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/config_padding_16dp"
+        android:paddingTop="@dimen/config_padding_4dp"
+        android:paddingEnd="@dimen/config_padding_16dp"
+        android:paddingBottom="@dimen/config_padding_8dp"
+        android:scrollbars="none" />
+
+
+</LinearLayout>

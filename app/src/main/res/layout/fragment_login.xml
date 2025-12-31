@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/school_assistant" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical">
+
+
+        <com.xuexiang.xui.widget.layout.XUIFrameLayout
+            style="@style/XUILayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start|center_vertical"
+                android:tint="?attr/colorAccent"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                android:id="@+id/et_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:hint="@string/inputnum"
+                android:inputType="number"
+                app:met_clearButton="true"
+                app:met_errorMessage="@string/tip_phone_number_error"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="@string/title_phone_number"
+                app:met_hideUnderline="true"
+                app:met_maxCharacters="11"
+                app:met_regexp="@string/regex_phone_number" />
+
+
+        </com.xuexiang.xui.widget.layout.XUIFrameLayout>
+
+
+        <com.xuexiang.xui.widget.layout.XUIFrameLayout
+            android:id="@+id/fl_verify_code"
+            style="@style/XUILayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start|center_vertical"
+                android:tint="?attr/colorAccent"
+                app:srcCompat="@drawable/yanzhengma" />
+            <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:hint="@string/please_input_pwd"
+                android:inputType="textPassword"
+                app:met_clearButton="true"
+                app:met_errorMessage="@string/tip_password_error"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="@string/please_input_pwd"
+                app:met_hideUnderline="true"
+                app:met_maxCharacters="18"
+                app:met_passWordButton="true"
+                app:met_regexp="@string/regex_password" />
+
+
+
+        </com.xuexiang.xui.widget.layout.XUIFrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
+                android:id="@+id/tv_forget_password"
+                style="@style/TextStyle.Explain"
+                android:layout_gravity="end"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="@string/fogpwd"
+                android:textColor="@color/xui_config_color_primary_text" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.xuexiang.xui.widget.textview.supertextview.SuperButton
+        android:id="@+id/btn_login"
+        style="@style/SuperButton.Primary.Login"
+        android:layout_marginTop="25dp"
+        android:text="@string/title_login_register" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="0.7"
+                android:scaleY="0.7" />
+
+            <TextView
+                style="@style/TextStyle.Explain"
+                android:layout_width="wrap_content"
+                android:text="@string/agree_protocol"
+                android:textColor="@color/xui_config_color_primary_text" />
+
+            <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
+                android:id="@+id/tv_user_protocol"
+                style="@style/TextStyle.Explain"
+                android:layout_width="wrap_content"
+                android:text="@string/title_user_protocol"
+                android:textColor="?attr/colorAccent" />
+
+            <TextView
+                style="@style/TextStyle.Explain"
+                android:layout_width="wrap_content"
+                android:text="@string/lab_and"
+                android:textColor="@color/xui_config_color_primary_text" />
+
+            <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
+                android:id="@+id/tv_privacy_protocol"
+                style="@style/TextStyle.Explain"
+                android:layout_width="wrap_content"
+                android:text="@string/title_privacy_protocol"
+                android:textColor="?attr/colorAccent" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>

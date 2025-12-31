@@ -1,0 +1,186 @@
+<resources>
+    <string name="app_name">校园失物招领</string>
+    <string name="app_browser_name">通用浏览器</string>
+
+    <string name="navigation_drawer_open">侧边栏</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_news">动态</string>
+    <string name="menu_trending">查看</string>
+    <string name="menu_profile">我的</string>
+
+    <string name="menu_notifications">通知</string>
+    <string name="menu_issues">问题</string>
+    <string name="menu_starred">收藏</string>
+    <string name="menu_search">搜索</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_about">关于</string>
+
+    <string name="about_copyright">© %1$s 校园失物招领 All rights reserved.</string>
+    <string name="about_item_homepage">访问官网</string>
+    <string name="about_item_author_github">联系作者</string>
+    <string name="about_item_donation_link">捐赠作者</string>
+    <string name="about_item_add_qq_group">QQ交流群</string>
+    <string name="url_project_github">https://kkgithub.com/haoxiang1024/school_app_android</string>
+    <string name="url_author_github">https://kkgithub.com/haoxiang1024</string>
+    <string name="url_donation_link">https://kkgithub.com/haoxiang1024</string>
+    <string name="url_add_qq_group">https://kkgithub.com/haoxiang1024</string>
+
+    <string name="lab_yes">是</string>
+    <string name="lab_no">否</string>
+    <string name="lab_open_third_app">是否允许页面打开第三方应用?</string>
+
+    <!-- 隐私政策弹窗   -->
+    <string name="lab_exit_app">退出应用</string>
+    <string name="lab_agree">同意</string>
+    <string name="lab_disagree">不同意</string>
+    <string name="lab_look_again">再次查看</string>
+    <string name="lab_still_disagree">仍不同意</string>
+    <string name="title_reminder">温馨提示</string>
+    <string name="content_think_about_it_again">要不要再想想</string>
+    <string name="content_privacy_explain_again">我们非常重视对你个人信息的保护，承诺严格按照《%s隐私权政策》保护及处理你的信息。如果你不同意该政策，很遗憾我们将无法为你提供服务</string>
+    <string name="lab_privacy_name">《%s隐私权政策》</string>
+
+    <!-- 登录   -->
+    <string name="title_login_register">登录/注册</string>
+    <string name="action_get_verify_code">获取验证码</string>
+    <string name="send_verify_code">验证码发送成功</string>
+    <string name="title_login">登录</string>
+    <string name="title_login_by_verify_code">验证码登录</string>
+    <string name="title_register">注册</string>
+    <string name="lab_forget_password">忘记密码?</string>
+    <string name="lab_login_by_verify_code">验证码登录</string>
+    <string name="lab_login_by_password">密码登录</string>
+    <string name="tip_please_input_phone_number">请输入手机号码</string>
+    <string name="title_phone_number">手机号码</string>
+    <string name="title_password">密码</string>
+    <string name="title_old_password">旧密码</string>
+    <string name="please_input_pwd">请输入密码</string>
+    <string name="lab_verify_code">验证码</string>
+    <string name="email">邮箱</string>
+    <string name="tip_password_error">密码必须是8~18位字母和数字的组合！</string>
+    <string name="tip_new_password_error">新密码必须是8~18位字母和数字的组合！</string>
+    <string name="tip_phone_number_error">无效的手机号！</string>
+    <string name="regex_phone_number">^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(16[6])|(17[0,1,3,5-8])|(18[0-9])|(19[8,9]))\\d{8}$</string>
+    <string name="tip_verify_code_error">请输入6位验证码</string>
+    <string name="email_verify_code_error">请输入正确的邮箱格式</string>
+    <string name="input_email">请输入邮箱</string>
+    <string name="regex_verify_code">^\\d{6}$</string>
+    <string name="regex_password">^(?:(?=.*[a-zA-Z])(?=.*[0-9])).{8,18}$</string>
+    <string name="regex_email">^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$</string>
+    <string name="title_forget_password">重置密码</string>
+    <string name="lab_register_account">点击注册即表示同意</string>
+    <string name="lab_service_protocol"><![CDATA[<用户协议>]]></string>
+    <string name="lab_logout_confirm">是否确认退出账号？</string>
+    <string name="title_user_protocol">用户协议</string>
+    <string name="title_privacy_protocol">隐私政策</string>
+    <string name="agree_protocol">我已阅读并同意</string>
+    <string name="lab_and">和</string>
+
+    <string name="title_jump_login">跳过</string>
+    <string name="label_previous">上一条</string>
+    <string name="label_next">下一条</string>
+    <string name="tip_ignore_message">以后不再提示此类信息</string>
+    <string name="tip_title">你知道吗？</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--    丢失物品信息-->
+    <string name="lost_content">丢失物品信息</string>
+    <string name="nickname">修改昵称</string>
+    <string name="cancel">取消</string>
+    <string name="sure">确定</string>
+    <string name="nick">昵称</string>
+    <string name="update_pwd">修改密码</string>
+    <string name="man">男</string>
+    <string name="women">女</string>
+    <string name="phone">手机号:</string>
+    <string name="regdate">注册时间:</string>
+    <string name="sumbit">提交</string>
+    <string name="choose">选择图片</string>
+    <string name="title">丢失物品标题</string>
+    <string name="recommendation">推荐</string>
+    <string name="content">内容</string>
+    <string name="loation">地点</string>
+    <string name="loster">发布人：</string>
+    <string name="contract">联系方式：</string>
+    <string name="submit">提交</string>
+    <string name="todo">TODO</string>
+    <string name="founttitle">招领物品标题</string>
+    <string name="state">状态:</string>
+    <string name="sendtime">发布时间：</string>
+    <string name="inputnum">请输入手机号</string>
+    <string name="pwdlogin">密码登录</string>
+    <string name="fogpwd">忘记密码</string>
+    <string name="upload">上传头像</string>
+    <string name="newpwd">请输入新密码</string>
+    <string name="repwd">再次输入密码</string>
+    <string name="resetpwd">重置密码</string>
+    <string name="hot">热点问题</string>
+    <string name="suggestion">意见反馈</string>
+    <string name="java">Java</string>
+    <string name="rocketmq">深度解析RocketMQ消息发送的高可用设计</string>
+    <string name="rocketmq_topic_topic">从rocketmq topic的创建机制可知，一个topic对应有多个消息队列，那么我们在发送消息时，是如何选择消息队列进行发送的？</string>
+    <string name="good">点赞</string>
+    <string name="commont">评论</string>
+    <string name="read">阅读量 123</string>
+    <string name="key">搜索标题、地点或状态</string>
+    <string name="search">搜索</string>
+    <string name="save">保存更改</string>
+    <string name="hello_world">Hello, World!</string>
+    <string name="text">设置后，会改变所有模块中的字体大小。如果在使用过程中存在问题或意见，可反馈给我们。</string>
+    <!--页面标题-->
+    <string name="detail">详情</string>
+    <string name="send_lost_info">发布丢失信息</string>
+    <string name="send_found_info">发布招领信息</string>
+    <string name="lost_info">失物信息</string>
+    <string name="lost_info_detail">失物详情</string>
+    <string name="found_info">招领信息</string>
+    <string name="found_info_detail">招领详情</string>
+    <string name="update_photo">修改头像</string>
+    <string name="ac">账户</string>
+    <string name="notification">公告</string>
+    <string name="help">帮助与反馈</string>
+    <string name="setting">设置</string>
+    <string name="about">关于</string>
+    <string name="generalsetting">通用设置</string>
+    <string name="photo">头像</string>
+    <string name="crash">校园失物招领app闪退如何解决?</string>
+    <string name="ac_problem">手机号/账户问题</string>
+    <string name="how_protect">如何保护用户隐私</string>
+    <string name="common">通用</string>
+    <string name="privacy">权限</string>
+    <string name="notifications">通知</string>
+    <string name="switch_account">切换账号</string>
+    <string name="logout">退出登录</string>
+    <string name="splash_title">校园失物招领</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="font_size">字体大小</string>
+    <string name="multi_language">多语言</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="lang_zh_cn">简体中文</string>
+    <string name="lang_follow_system">跟随系统</string>
+    <string name="lang_en">English</string>
+    <string name="pull_to_refresh">下拉刷新重试一次吧</string>
+    <string name="submit_success">提交成功</string>
+    <string name="no_selection_made">未选择任何项</string>
+    <string name="no_info_posted_yet">还未发布任何信息</string>
+    <string name="verification_code_empty">验证码为空！</string>
+    <string name="no_relevant_info_found">没有找到相关信息</string>
+    <string name="nickname_cannot_be_empty">昵称不能为空！</string>
+    <string name="no_image_selected_yet">还未选择图片！</string>
+    <string name="no_cache_to_clear">没有需要清理的缓存</string>
+    <string name="internet_erro">网络连接失败</string>
+    <string name="login_su">登录成功</string>
+    <string name="reset_su">重置成功</string>
+    <string name="modify_success">修改资料成功！</string>
+    <string name="logout_success">登出成功！</string>
+    <string name="logout_failed">登录失败！</string>
+    <string name="title_not_empty">标题不能为空</string>
+    <string name="content_not_empty">内容不能为空</string>
+    <string name="location_not_empty">地点不能为空</string>
+    <string name="category_not_selected">你还未选择分类</string>
+    <string name="send_su">发布成功</string>
+    <string name="login_fail">登录失败，请检查手机号或密码是否正确</string>
+
+
+</resources>

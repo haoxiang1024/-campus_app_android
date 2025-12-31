@@ -1,0 +1,186 @@
+<resources>
+    <string name="app_name">Campus Assistant</string>
+    <string name="app_browser_name">Universal Browser</string>
+
+    <string name="navigation_drawer_open">Side menu</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_news">Dynamic</string>
+    <string name="menu_trending">Look</string>
+    <string name="menu_profile">Personal Center</string>
+    <string name="please_input_pwd">please input password</string>
+    <string name="send_verify_code">code sent to your phone</string>
+    <string name="email_verify_code_error">please input correct email format</string>
+    <string name="regex_email">^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$</string>
+    <string name="menu_notifications">Notifications</string>
+    <string name="email">Email</string>
+    <string name="input_email">please input email</string>
+    <string name="menu_issues">Issues</string>
+    <string name="menu_starred">Starred</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
+    <string name="recommendation">recommendation</string>
+
+    <string name="about_copyright">© %1$s Campus Assistant All rights reserved.</string>
+    <string name="about_item_homepage">Visit official website</string>
+    <string name="about_item_author_github">Contact author</string>
+    <string name="about_item_donation_link">Donate to author</string>
+    <string name="about_item_add_qq_group">QQ group</string>
+    <string name="url_project_github">https://github.com/haoxiang1024/hx</string>
+    <string name="url_author_github">https://gitee.com/xuexiangjys/xuexiangjys</string>
+    <string name="url_donation_link">https://gitee.com/xuexiangjys/Resource/blob/master/doc/sponsor.md</string>
+    <string name="url_add_qq_group">http://qm.qq.com/cgi-bin/qm/qr?k=tiP-E6rDf0y77PRNfp2lNVcc9RsglPCM</string>
+
+    <string name="lab_yes">Yes</string>
+    <string name="lab_no">No</string>
+    <string name="lab_open_third_app">Allow opening third-party apps on the page?</string>
+
+    <!-- Privacy policy popup -->
+    <string name="lab_exit_app">Exit the app</string>
+    <string name="lab_agree">Agree</string>
+    <string name="lab_disagree">Disagree</string>
+    <string name="lab_look_again">Review again</string>
+    <string name="lab_still_disagree">Still disagree</string>
+    <string name="title_reminder">Reminder</string>
+    <string name="content_think_about_it_again">Do you want to think about it again?</string>
+    <string name="content_privacy_explain_again">We value your personal information and promise to protect and handle your information strictly in accordance with the "%s Privacy Policy". If you do not agree to this policy, unfortunately we will not be able to provide services for you.</string>
+    <string name="lab_privacy_name">"%s Privacy Policy"</string>
+
+    <!-- Login -->
+    <string name="title_login_register">Login/Register</string>
+    <string name="action_get_verify_code">Get Code</string>
+    <string name="title_login">Login</string>
+    <string name="title_login_by_verify_code">Login by Verification Code</string>
+    <string name="title_register">Register</string>
+    <string name="lab_forget_password">Forget Password?</string>
+    <string name="lab_login_by_verify_code">Login by Verification Code</string>
+    <string name="lab_login_by_password">Login by Password</string>
+    <string name="tip_please_input_phone_number">Please input phone number</string>
+    <string name="title_phone_number">Phone Number</string>
+    <string name="title_password">Password</string>
+    <string name="title_old_password">Old Password</string>
+    <string name="hint_please_input_verify_code">Please input verification code</string>
+    <string name="lab_verify_code">Verification Code</string>
+    <string name="tip_password_error">Password must be composed of 8-18 letters and numbers!</string>
+    <string name="tip_new_password_error">New password must be composed of 8-18 letters and numbers!</string>
+    <string name="tip_phone_number_error">Invalid phone number!</string>
+    <string name="regex_phone_number">^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(16[6])|(17[0,1,3,5-8])|(18[0-9])|(19[8,9]))\\d{8}$</string>
+    <string name="tip_verify_code_error">Please input 6-digit verification code</string>
+    <string name="regex_verify_code">^\\d{6}$</string>
+    <string name="regex_password">^(?:(?=.*[a-zA-Z])(?=.*[0-9])).{8,18}$</string>
+    <string name="title_forget_password">Reset Password</string>
+    <string name="lab_register_account">By clicking register, you agree to </string>
+    <string name="lab_service_protocol"><![CDATA[<User Agreement>]]></string>
+    <string name="lab_logout_confirm">Are you sure to log out?</string>
+    <string name="title_user_protocol">User Agreement</string>
+    <string name="title_privacy_protocol">Privacy Policy</string>
+    <string name="agree_protocol">I have read and agree to </string>
+    <string name="lab_and">and </string>
+
+    <string name="title_jump_login">Skip</string>
+    <string name="label_previous">Previous</string>
+    <string name="label_next">Next</string>
+    <string name="tip_ignore_message">Do not show this type of message again in the future</string>
+    <string name="tip_title">Did you know?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Lost and found information -->
+    <string name="lost_content">Lost and Found Information</string>
+    <string name="nickname">Modify Nickname</string>
+    <string name="cancel">Cancel</string>
+    <string name="sure">OK</string>
+    <string name="nick">Nickname</string>
+    <string name="update_pwd">Modify Password</string>
+    <string name="man">Male</string>
+    <string name="women">Female</string>
+    <string name="phone">Phone Number:</string>
+    <string name="regdate">Registration Date:</string>
+    <string name="sumbit">Submit</string>
+    <string name="choose">Choose Image</string>
+    <string name="title">Lost and Found Title</string>
+    <string name="content">Content</string>
+    <string name="loation">Location</string>
+    <string name="loster">Publish:</string>
+    <string name="contract">Contact:</string>
+    <string name="submit">Submit</string>
+    <string name="todo">TODO</string>
+    <string name="founttitle">Found Item Title</string>
+    <string name="state">Status:</string>
+    <string name="sendtime">Published Time:</string>
+    <string name="inputnum">Please input phone number</string>
+    <string name="pwdlogin">Login by Password</string>
+    <string name="fogpwd">Forgot Password</string>
+    <string name="upload">Upload Avatar</string>
+    <string name="newpwd">Please input new password</string>
+    <string name="repwd">Please input password again</string>
+    <string name="resetpwd">Reset Password</string>
+    <string name="hot">Hot Issues</string>
+    <string name="suggestion">Feedback</string>
+    <string name="java">Java</string>
+    <string name="rocketmq">Deep analysis of RocketMQ messaging high-availability design</string>
+    <string name="rocketmq_topic_topic">From the creation mechanism of RocketMQ topic, we know that a topic corresponds to multiple message queues. How do we choose a message queue to send messages?</string>
+    <string name="good">Like</string>
+    <string name="commont">Comment</string>
+    <string name="read">Number of reading 123</string>
+
+    <string name="key">Search for titles, locations or statuses.</string>
+    <string name="search">Search</string>
+    <string name="save">Save changes</string>
+    <string name="hello_world">Hello, World!</string>
+    <string name="text">After setting, font size in all modules will be changed. If there are any problems or suggestions during use, please provide feedback to us.</string>
+<!--页面标题-->
+    <string name="detail">Detail</string>
+    <string name="send_lost_info">Post Lost Info</string>
+    <string name="send_found_info">Post Found Info</string>
+    <string name="lost_info">LostInfo</string>
+    <string name="lost_info_detail">LostDetail</string>
+    <string name="found_info">Found Info</string>
+    <string name="found_info_detail">Found Detail</string>
+    <string name="update_photo">Update Photo</string>
+    <string name="ac">Account</string>
+    <string name="notification">Notification</string>
+    <string name="help">HelpFeedback</string>
+    <string name="setting">Settings</string>
+    <string name="about">About Us</string>
+    <string name="generalsetting">General Setting</string>
+    <string name="photo">Photo</string>
+    <string name="crash">How to solve the app crash issue of Campus Assistant?</string>
+    <string name="ac_problem">Phone number/Account Problems</string>
+    <string name="how_protect">How to Protect User Privacy</string>
+    <string name="common">Common</string>
+    <string name="privacy">Privacy</string>
+    <string name="notifications">Notification</string>
+    <string name="switch_account">Switch Account</string>
+    <string name="logout">Logout</string>
+    <string name="splash_title">School Helper</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="font_size">Font Size</string>
+    <string name="multi_language">Multi Lang</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="lang_zh_cn">Chinese</string>
+    <string name="lang_follow_system">Follow Sys</string>
+    <string name="lang_en">English</string>
+    <string name="pull_to_refresh">Pull down to refresh and try again</string>
+    <string name="submit_success">Submitted successfully</string>
+    <string name="no_selection_made">No selection made</string>
+    <string name="no_info_posted_yet">No information has been posted yet</string>
+    <string name="verification_code_empty">Verification code is empty!</string>
+    <string name="no_relevant_info_found">No relevant information found</string>
+    <string name="nickname_cannot_be_empty">Nickname cannot be empty!</string>
+    <string name="no_image_selected_yet">No image has been selected yet!</string>
+    <string name="no_cache_to_clear">No cache to clear</string>
+    <string name="internet_erro">Internet Error</string>
+    <string name="login_su">Login success</string>
+    <string name="reset_su">Reset success</string>
+    <string name="modify_success">Modify profile successfully!</string>
+    <string name="logout_success">Logout success!</string>
+    <string name="logout_failed">Login failed!</string>
+    <string name="title_not_empty">Title cannot be empty</string>
+    <string name="content_not_empty">Content cannot be empty</string>
+    <string name="location_not_empty">Location cannot be empty</string>
+    <string name="category_not_selected">You haven\'t selected a category yet</string>
+    <string name="send_su">Send success</string>
+    <string name="login_fail">Login failed, please check whether the phone number or password is correct</string>
+
+</resources>

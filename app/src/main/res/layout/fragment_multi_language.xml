@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout style="@style/PullDownStyle">
+
+        <androidx.core.widget.NestedScrollView style="@style/ScrollViewStyle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="20dp">
+                <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+                    android:id="@+id/system_language"
+                    android:layout_width="wrap_content"
+                    style="@style/InfoItem.Account"
+                    app:sLeftTextString="@string/lang_follow_system" />
+
+                <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+                    android:id="@+id/simple_cn"
+                    android:layout_width="wrap_content"
+                    style="@style/InfoItem.Account"
+                    app:sLeftTextString="@string/lang_zh_cn" />
+                <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+                    android:id="@+id/en"
+                    style="@style/InfoItem.Account"
+                    app:sLeftTextString="@string/lang_en" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>
