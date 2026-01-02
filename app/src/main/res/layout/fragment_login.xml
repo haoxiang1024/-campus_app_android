@@ -95,7 +95,6 @@
             android:layout_height="wrap_content">
 
 
-
             <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
                 android:id="@+id/tv_forget_password"
                 style="@style/TextStyle.Explain"
@@ -104,7 +103,7 @@
                 android:paddingTop="5dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="5dp"
-                android:text="@string/fogpwd"
+                android:text="忘记密码"
                 android:textColor="@color/xui_config_color_primary_text" />
 
         </FrameLayout>

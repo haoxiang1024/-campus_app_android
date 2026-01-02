@@ -63,7 +63,7 @@ import okhttp3.Response;
 @Page(anim = CoreAnim.none)
 public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements View.OnClickListener {
 
-    Button get_code_id;//获取验证码按钮
+
 
 
     String loginMsg = "";//登录信息
@@ -124,8 +124,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
     @NonNull
     @Override
     protected FragmentLoginBinding viewBindingInflate(LayoutInflater inflater, ViewGroup container, boolean attachToRoot)  {
-        FragmentLoginBinding binding = FragmentLoginBinding.inflate(inflater, container, attachToRoot);
-        return binding;
+        return FragmentLoginBinding.inflate(inflater, container, attachToRoot);
 
     }
 
@@ -202,13 +201,23 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         super.onResponse(call, response);
-                        loginMsg = JsonOperate.getValue(result, "data");
-                        //获取信息并存储
-                        Utils.doUserData(loginMsg);
-                        //设置登录token
-                        TokenUtils.setToken(RandomUtils.getRandomLetters(6));
-                        //跳转主界面
-                        ActivityUtils.startActivity(MainActivity.class);
+                        if(JsonOperate.getValue(result, "msg").equals("登录成功")){
+                            //登录成功
+                            loginMsg = JsonOperate.getValue(result, "data");
+                            //获取信息并存储
+                            Utils.doUserData(loginMsg);
+                            //设置登录token
+                            TokenUtils.setToken(RandomUtils.getRandomLetters(6));
+                            //跳转主界面
+                            ActivityUtils.startActivity(MainActivity.class);
+                        }else {
+
+                            requireActivity().runOnUiThread(() -> {
+                                hideLoadingDialog();
+                                Utils.showResponse(JsonOperate.getValue(result, "msg"));
+                            });
+                        }
+
                     }
 
                     @Override

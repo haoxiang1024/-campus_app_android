@@ -1,6 +1,7 @@
 package com.hx.campus.fragment.other;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -40,7 +41,7 @@ public class ResetPwdFragment extends BaseFragment<FragmentResetPwdBinding> impl
 
 
     private CountDownButtonHelper mCountDownHelper;
-    private boolean vlidate = false;//验证码是否校验成功
+    private volatile boolean vlidate = false;//验证码是否校验成功
 
 
     /**
@@ -89,9 +90,7 @@ public class ResetPwdFragment extends BaseFragment<FragmentResetPwdBinding> impl
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.btn_reset) {
-            //重置密码
             reset();
-
         } else if (id==R.id.btn_get_verify_code) {
             //获取验证码
             send();
@@ -101,70 +100,62 @@ public class ResetPwdFragment extends BaseFragment<FragmentResetPwdBinding> impl
 
 
     private void reset() {
-        //获取数据
+        // 1. 获取并校验输入（前置校验）
         String number = binding.etPhoneNumber.getEditValue();
         String password = binding.etPassword.getEditValue();
         String repassword = binding.rePassword.getEditValue();
         String code = binding.inputCode.getEditValue();
         String email = binding.inputEmail.getEditValue();
-        if(!password.equals(repassword)){
-            Utils.showResponse( "两次密码不一致");
+
+        // 空值/格式校验（补充你原来缺失的）
+        if (TextUtils.isEmpty(number) || TextUtils.isEmpty(password) || TextUtils.isEmpty(repassword) || TextUtils.isEmpty(code) || TextUtils.isEmpty(email)) {
+            Utils.showResponse("请填写完整信息");
             return;
         }
-        //验证邮箱
-        vlidateEmail( email,code);
-        if(vlidate){
-            //重置密码
-            new Thread(){
-                @Override
-                public void run() {
-                    super.run();
-                    OkhttpUtils.get(Utils.rebuildUrl("/resetPwd?phone=" + number + "&newPwd=" + password + "&email=" + email + "&email_code=" + code, getContext()), new OkHttpCallback() {
-                        @Override
-                        public void onResponse(Call call, Response response) throws IOException {
-                            super.onResponse(call, response);
-                            // 1. 主线程执行UI操作和导航
-                            new Handler(Looper.getMainLooper()).post(() -> {
-                                // 3. 关闭当前页面
-                                try {
-                                    requireActivity().onBackPressed();
-                                    // 2. 显示成功提示
-                                    Utils.showResponse(Utils.getString(requireContext(), R.string.reset_su));
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            });
-                        }
-                    });
-                }
-            }.start();
-        }else {
-            //验证码校验失败
-            Utils.showResponse( "验证码校验失败");
+        if (!password.equals(repassword)) {
+            Utils.showResponse("两次密码不一致");
+            return;
         }
-
-
-
+        // 3. 调用验证邮箱方法，通过回调处理结果
+        vlidateEmail(email, code, isValid -> {
+            if (isValid) {
+                // 验证成功：执行重置密码
+                resetPassword(number, password, email, code);
+            } else {
+                // 验证失败：提示用户
+                Utils.showResponse("验证码校验失败");
+            }
+        });
     }
-//验证邮箱
-    private void vlidateEmail(String email,String code){
-    new Thread() {
-        @Override
-        public void run() {
-            super.run();
-            OkhttpUtils.get(Utils.rebuildUrl("/verify_code?email=" + email+"&code="+code , getContext()), new OkHttpCallback() {
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    super.onResponse(call, response);
-                    if(this.result.){
-                        vlidate = true;
+
+    // 抽离重置密码逻辑
+    private void resetPassword(String number, String password, String email, String code) {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                OkhttpUtils.get(Utils.rebuildUrl("/resetPwd?phone=" + number + "&newPwd=" + password + "&email=" + email + "&email_code=" + code, getContext()), new OkHttpCallback() {
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        super.onResponse(call, response);
+                        Utils.showResponse(JsonOperate.getValue(result, "msg"));
+                        new Handler(Looper.getMainLooper()).post(() -> {
+                            openPage(LoginFragment.class);
+                        });
                     }
 
-                }
-            });
-        }
-    }.start();
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        super.onFailure(call, e);
+                        new Handler(Looper.getMainLooper()).post(() -> {
+                            Utils.showResponse("网络异常，重置失败");
+                        });
+                    }
+                });
+            }
+        }.start();
     }
+
     private void send(){
         //获取数据
         String email = binding.inputEmail.getEditValue();
@@ -198,5 +189,35 @@ public class ResetPwdFragment extends BaseFragment<FragmentResetPwdBinding> impl
         }
         super.onDestroyView();
 
+    }
+    // 定义回调接口
+    interface VerifyEmailCallback {
+        void onVerifyResult(boolean isValid);
+    }
+    // 重构验证邮箱方法（增加回调，移除全局变量依赖）
+    private void vlidateEmail(String email, String code, VerifyEmailCallback callback) {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                OkhttpUtils.get(Utils.rebuildUrl("/verify_code?email=" + email + "&code=" + code, getContext()), new OkHttpCallback() {
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        super.onResponse(call, response);
+                        // 解析结果
+                        boolean isValid = JsonOperate.getValue(result, "msg").equals("验证码验证通过");
+                        // 通过回调把结果传回主线程
+                        new Handler(Looper.getMainLooper()).post(() -> callback.onVerifyResult(isValid));
+                    }
+
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        super.onFailure(call, e);
+                        // 网络失败时回调false
+                        new Handler(Looper.getMainLooper()).post(() -> callback.onVerifyResult(false));
+                    }
+                });
+            }
+        }.start();
     }
 }
