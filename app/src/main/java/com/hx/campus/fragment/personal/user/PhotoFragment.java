@@ -149,6 +149,8 @@ public class PhotoFragment extends BaseFragment<FragmentPhotoBinding> {
                 e.printStackTrace();
             }
 
+
+
             //请求成功响应函数
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
