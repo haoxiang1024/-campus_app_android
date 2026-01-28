@@ -1,17 +1,12 @@
 package com.hx.campus.fragment.other;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 
@@ -27,9 +22,6 @@ import com.xuexiang.xui.utils.CountDownButtonHelper;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
 
 import java.io.IOException;
-import java.util.Objects;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import okhttp3.Call;
 import okhttp3.Response;

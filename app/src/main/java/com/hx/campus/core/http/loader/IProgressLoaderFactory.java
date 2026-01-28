@@ -4,12 +4,7 @@ import android.content.Context;
 
 import com.xuexiang.xhttp2.subsciber.impl.IProgressLoader;
 
-/**
- * IProgressLoader的创建工厂实现接口
- *
- * @author xuexiang
- * @since 2019-11-18 23:17
- */
+
 public interface IProgressLoaderFactory {
 
 

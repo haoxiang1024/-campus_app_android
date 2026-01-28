@@ -28,36 +28,11 @@ import android.webkit.WebView;
 
 import androidx.annotation.RequiresApi;
 
-import com.just.agentweb.core.client.MiddlewareWebClientBase;
 import com.hx.campus.R;
+import com.just.agentweb.core.client.MiddlewareWebClientBase;
 import com.xuexiang.xui.utils.ResUtils;
 
-/**
- * 【网络请求、加载】
- * WebClient（WebViewClient 这个类主要帮助WebView处理各种通知、url加载，请求时间的）中间件
- * <p>
- * <p>
- * 方法的执行顺序，例如下面用了7个中间件一个 WebViewClient
- * <p>
- * .useMiddlewareWebClient(getMiddlewareWebClient())  // 1
- * .useMiddlewareWebClient(getMiddlewareWebClient())  // 2
- * .useMiddlewareWebClient(getMiddlewareWebClient())  // 3
- * .useMiddlewareWebClient(getMiddlewareWebClient())  // 4
- * .useMiddlewareWebClient(getMiddlewareWebClient())  // 5
- * .useMiddlewareWebClient(getMiddlewareWebClient())  // 6
- * .useMiddlewareWebClient(getMiddlewareWebClient())  // 7
- * DefaultWebClient                                  // 8
- * .setWebViewClient(mWebViewClient)                 // 9
- * <p>
- * <p>
- * 典型的洋葱模型
- * 对象内部的方法执行顺序: 1->2->3->4->5->6->7->8->9->8->7->6->5->4->3->2->1
- * <p>
- * <p>
- * 中断中间件的执行， 删除super.methodName(...) 这行即可
- * <p>
- * 这里主要是做去广告的工作
- */
+
 public class MiddlewareWebViewClient extends MiddlewareWebClientBase {
 
     private static int count = 1;

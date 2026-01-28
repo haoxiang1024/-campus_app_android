@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.hx.campus.R;
 import com.hx.campus.adapter.entity.Found;

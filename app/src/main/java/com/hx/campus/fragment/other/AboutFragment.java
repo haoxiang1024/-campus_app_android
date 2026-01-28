@@ -24,7 +24,6 @@ import androidx.annotation.NonNull;
 
 import com.hx.campus.R;
 import com.hx.campus.core.BaseFragment;
-import com.hx.campus.core.webview.AgentWebActivity;
 import com.hx.campus.databinding.FragmentAboutBinding;
 import com.hx.campus.utils.Utils;
 import com.xuexiang.xpage.annotation.Page;
@@ -35,10 +34,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * @author xuexiang
- * @since 2019-10-30 00:02
- */
+
 @Page()
 public class AboutFragment extends BaseFragment<FragmentAboutBinding> {
     /**

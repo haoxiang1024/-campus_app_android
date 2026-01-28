@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2018 xuexiangjys()
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.hx.campus.utils;
 
 import android.graphics.Color;
@@ -20,39 +5,7 @@ import android.text.TextUtils;
 
 import java.util.Random;
 
-/**
- * <pre>
- *     desc   : Random Utils
- *     author : xuexiang
- *     time   : 2018/4/28 上午12:41
- * </pre>
- * <ul>
- * Shuffling algorithm
- * <li>{@link #shuffle(Object[])} Shuffling algorithm, Randomly permutes the specified array using a default source of
- * randomness</li>
- * <li>{@link #shuffle(Object[], int)} Shuffling algorithm, Randomly permutes the specified array</li>
- * <li>{@link #shuffle(int[])} Shuffling algorithm, Randomly permutes the specified int array using a default source of
- * randomness</li>
- * <li>{@link #shuffle(int[], int)} Shuffling algorithm, Randomly permutes the specified int array</li>
- * </ul>
- * <ul>
- * get random int
- * <li>{@link #getRandom(int)} get random int between 0 and max</li>
- * <li>{@link #getRandom(int, int)} get random int between min and max</li>
- * </ul>
- * <ul>
- * get random numbers or letters
- * <li>{@link #getRandomCapitalLetters(int)} get a fixed-length random string, its a mixture of uppercase letters</li>
- * <li>{@link #getRandomLetters(int)} get a fixed-length random string, its a mixture of uppercase and lowercase letters
- * </li>
- * <li>{@link #getRandomLowerCaseLetters(int)} get a fixed-length random string, its a mixture of lowercase letters</li>
- * <li>{@link #getRandomNumbers(int)} get a fixed-length random string, its a mixture of numbers</li>
- * <li>{@link #getRandomNumbersAndLetters(int)} get a fixed-length random string, its a mixture of uppercase, lowercase
- * letters and numbers</li>
- * <li>{@link #getRandom(String, int)} get a fixed-length random string, its a mixture of chars in source</li>
- * <li>{@link #getRandom(char[], int)} get a fixed-length random string, its a mixture of chars in sourceChar</li>
- * </ul>
- */
+
 public final class RandomUtils {
 
     public static final String NUMBERS_AND_LETTERS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

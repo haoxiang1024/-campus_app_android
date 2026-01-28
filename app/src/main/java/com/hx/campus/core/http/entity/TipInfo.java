@@ -2,10 +2,7 @@ package com.hx.campus.core.http.entity;
 
 import androidx.annotation.Keep;
 
-/**
- * @author xuexiang
- * @since 2019-08-28 15:35
- */
+
 @Keep
 public class TipInfo {
 

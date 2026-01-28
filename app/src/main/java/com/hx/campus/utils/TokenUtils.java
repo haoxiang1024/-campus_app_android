@@ -1,37 +1,16 @@
-/*
- * Copyright (C) 2019 xuexiangjys()
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
 
 package com.hx.campus.utils;
 
 import android.content.Context;
 
-import com.umeng.analytics.MobclickAgent;
 import com.hx.campus.R;
 import com.hx.campus.activity.LoginActivity;
+import com.umeng.analytics.MobclickAgent;
 import com.xuexiang.xui.utils.XToastUtils;
 import com.xuexiang.xutil.app.ActivityUtils;
 import com.xuexiang.xutil.common.StringUtils;
 
-/**
- * Token管理工具
- *
- * @author xuexiang
- * @since 2019-11-17 22:37
- */
+
 public final class TokenUtils {
 
     private static final String KEY_TOKEN = "com.hx.campus.utils.KEY_TOKEN";

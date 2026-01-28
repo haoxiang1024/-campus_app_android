@@ -16,7 +16,6 @@ import androidx.annotation.RequiresApi;
 import com.hx.campus.R;
 import com.hx.campus.core.BaseFragment;
 import com.hx.campus.databinding.FragmentSettingsBinding;
-import com.hx.campus.fragment.settings.GeneralFragment;
 import com.hx.campus.utils.TokenUtils;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xpage.annotation.Page;
@@ -24,10 +23,7 @@ import com.xuexiang.xui.widget.dialog.DialogLoader;
 import com.xuexiang.xui.widget.textview.supertextview.SuperTextView;
 import com.xuexiang.xutil.XUtil;
 
-/**
- * @author xuexiang
- * @since 2019-10-15 22:38
- */
+
 @Page()
 public class SettingsFragment extends BaseFragment<FragmentSettingsBinding> implements SuperTextView.OnSuperTextViewClickListener {
 

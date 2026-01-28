@@ -1,19 +1,4 @@
-/*
- * Copyright (C) 2019 ()
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+
 
 package com.hx.campus.core.webview;
 
@@ -51,6 +36,10 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 
+import com.hx.campus.MyApp;
+import com.hx.campus.R;
+import com.hx.campus.core.BaseFragment;
+import com.hx.campus.databinding.FragmentAgentwebBinding;
 import com.just.agentweb.action.PermissionInterceptor;
 import com.just.agentweb.core.AgentWeb;
 import com.just.agentweb.core.client.DefaultWebClient;
@@ -65,10 +54,6 @@ import com.just.agentweb.download.DefaultDownloadImpl;
 import com.just.agentweb.download.DownloadListenerAdapter;
 import com.just.agentweb.download.DownloadingService;
 import com.just.agentweb.widget.IWebLayout;
-import com.hx.campus.MyApp;
-import com.hx.campus.R;
-import com.hx.campus.core.BaseFragment;
-import com.hx.campus.databinding.FragmentAgentwebBinding;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageActivity;
@@ -81,12 +66,7 @@ import com.xuexiang.xutil.net.JsonUtil;
 
 import java.util.HashMap;
 
-/**
- * 使用XPageFragment
- *
- * @author xuexiang
- * @since 2019-05-26 18:15
- */
+
 @Page(params = {KEY_URL})
 public class XPageWebViewFragment extends BaseFragment<FragmentAgentwebBinding> implements View.OnClickListener {
 

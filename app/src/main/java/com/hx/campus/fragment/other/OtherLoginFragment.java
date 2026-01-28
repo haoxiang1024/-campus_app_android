@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
-import com.mob.MobSDK;
 import com.hx.campus.R;
 import com.hx.campus.activity.LoginActivity;
 import com.hx.campus.activity.MainActivity;
@@ -179,8 +178,7 @@ public class OtherLoginFragment extends BaseFragment<FragmentOtherLoginBinding> 
     private void handleSubmitPrivacy() {
         SettingUtils.setIsAgreePrivacy(true);
         UMengInit.init();
-        //mobsdk隐私政策
-        MobSDK.submitPolicyGrantResult(true);
+
     }
 
     /**

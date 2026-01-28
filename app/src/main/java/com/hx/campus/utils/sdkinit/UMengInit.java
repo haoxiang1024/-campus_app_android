@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2019 ()
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
 
 package com.hx.campus.utils.sdkinit;
 
@@ -22,20 +6,15 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
-import com.meituan.android.walle.WalleChannelReader;
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.commonsdk.UMConfigure;
 import com.hx.campus.BuildConfig;
 import com.hx.campus.MyApp;
 import com.hx.campus.utils.SettingUtils;
+import com.meituan.android.walle.WalleChannelReader;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
 import com.xuexiang.xui.XUI;
 
-/**
- * UMeng 统计 SDK初始化
- *
- * @author xuexiang
- * @since 2019-06-18 15:49
- */
+
 public final class UMengInit {
 
     private static final String DEFAULT_CHANNEL_ID = "github";

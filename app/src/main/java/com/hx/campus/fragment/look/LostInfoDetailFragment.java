@@ -26,7 +26,6 @@ import java.util.Arrays;
 
 import okhttp3.Call;
 import okhttp3.Response;
-import androidx.annotation.Nullable;
 @Page()
 public class LostInfoDetailFragment extends BaseFragment<FragmentLostInfoDetailBinding> {
 

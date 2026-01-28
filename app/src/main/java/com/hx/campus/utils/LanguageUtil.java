@@ -17,9 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.HashMap;
 import java.util.Locale;
 
-/**
- * 功能描述：修改app内部的语言工具类
- */
+
 public class LanguageUtil {
 
     /*语言类型：

@@ -1,19 +1,4 @@
-/*
- * Copyright (C) 2019 xuexiangjys()
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+
 
 package com.hx.campus.core.webview;
 
@@ -51,6 +36,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 
+import com.hx.campus.MyApp;
+import com.hx.campus.R;
 import com.just.agentweb.action.PermissionInterceptor;
 import com.just.agentweb.core.AgentWeb;
 import com.just.agentweb.core.client.MiddlewareWebChromeBase;
@@ -65,19 +52,12 @@ import com.just.agentweb.download.DownloadListenerAdapter;
 import com.just.agentweb.download.DownloadingService;
 import com.just.agentweb.utils.LogUtils;
 import com.just.agentweb.widget.IWebLayout;
-import com.hx.campus.MyApp;
-import com.hx.campus.R;
 import com.xuexiang.xui.utils.XToastUtils;
 import com.xuexiang.xutil.net.JsonUtil;
 
 import java.util.HashMap;
 
-/**
- * 通用WebView页面
- *
- * @author xuexiang
- * @since 2019/1/4 下午11:13
- */
+
 public class AgentWebFragment extends Fragment implements FragmentKeyDown {
     public static final String KEY_URL = "com.xuexiang.xuidemo.base.webview.key_url";
     public static final String TAG = AgentWebFragment.class.getSimpleName();

@@ -5,58 +5,36 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-/**
- * @TableName user
- */
+
 public class User implements Serializable {
-    /**
-     *
-     */
+  
     private Integer id;
 
-    /**
-     *
-     */
+  
 
 
-    /**
-     *
-     */
+  
     private String password;
 
-    /**
-     *
-     */
+  
     private String nickname;
 
-    /**
-     *
-     */
+  
     private String photo;
 
-    /**
-     *
-     */
+  
     private String sex;
 
-    /**
-     *
-     */
+  
     private String phone;
 
-    /**
-     *
-     */
+  
     private Integer balance;
 
-    /**
-     *
-     */
+  
     private Integer prestige;
 
-    /**
-     *
-     */
+  
     private Date reg_date;
 
     public User(Integer id, String password, String nickname, String photo, String sex, String phone, Integer balance, Integer prestige, Date reg_date) {
@@ -84,16 +62,12 @@ public class User implements Serializable {
     }
 
 
-    /**
-     *
-     */
+  
     public Integer getId() {
         return id;
     }
 
-    /**
-     *
-     */
+  
     public void setId(Integer id) {
         this.id = id;
     }
@@ -102,72 +76,52 @@ public class User implements Serializable {
         return password;
     }
 
-    /**
-     *
-     */
+  
     public void setPassword(String password) {
         this.password = password;
     }
 
-    /**
-     *
-     */
+  
     public String getNickname() {
         return nickname;
     }
 
-    /**
-     *
-     */
+  
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
-    /**
-     *
-     */
+  
     public String getPhoto() {
         return photo;
     }
 
-    /**
-     *
-     */
+  
     public void setPhoto(String photo) {
         this.photo = photo;
     }
 
-    /**
-     *
-     */
+  
     public String getSex() {
         return sex;
     }
 
-    /**
-     *
-     */
+  
     public void setSex(String sex) {
         this.sex = sex;
     }
 
-    /**
-     *
-     */
+  
     public String getPhone() {
         return phone;
     }
 
-    /**
-     *
-     */
+  
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    /**
-     *
-     */
+  
 
     public Integer getBalance() {
         return balance;
@@ -177,30 +131,22 @@ public class User implements Serializable {
         this.balance = balance;
     }
 
-    /**
-     *
-     */
+  
     public Integer getPrestige() {
         return prestige;
     }
 
-    /**
-     *
-     */
+  
     public void setPrestige(Integer prestige) {
         this.prestige = prestige;
     }
 
-    /**
-     *
-     */
+  
     public Date getReg_date() {
         return reg_date;
     }
 
-    /**
-     *
-     */
+  
     public void setReg_date(Date reg_date) {
         this.reg_date = reg_date;
     }

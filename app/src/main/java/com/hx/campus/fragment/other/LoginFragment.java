@@ -1,32 +1,23 @@
 package com.hx.campus.fragment.other;
 
 
-import static android.content.ContentValues.TAG;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
-import com.hx.campus.utils.ResponseMsg;
-import com.mob.MobSDK;
 import com.hx.campus.R;
 import com.hx.campus.activity.MainActivity;
 import com.hx.campus.core.BaseFragment;
 import com.hx.campus.databinding.FragmentLoginBinding;
 import com.hx.campus.utils.LoadingDialog;
 import com.hx.campus.utils.RandomUtils;
+import com.hx.campus.utils.ResponseMsg;
 import com.hx.campus.utils.SettingUtils;
 import com.hx.campus.utils.TokenUtils;
 import com.hx.campus.utils.Utils;
@@ -37,29 +28,18 @@ import com.hx.campus.utils.service.JsonOperate;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.enums.CoreAnim;
-import com.xuexiang.xui.utils.CountDownButtonHelper;
-import com.xuexiang.xui.utils.ResUtils;
 import com.xuexiang.xui.utils.ThemeUtils;
 import com.xuexiang.xui.utils.ViewUtils;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
 import com.xuexiang.xutil.app.ActivityUtils;
 
 import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
 import okhttp3.Call;
 import okhttp3.Response;
 
 
-/**
- * 登录页面
- *
- * @author xuexiang
- * @since 2019-11-17 22:15
- */
+
 @Page(anim = CoreAnim.none)
 public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements View.OnClickListener {
 

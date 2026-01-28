@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
@@ -34,7 +33,6 @@ import com.hx.campus.utils.Utils;
 import com.hx.campus.utils.internet.OkHttpCallback;
 import com.hx.campus.utils.internet.OkhttpUtils;
 import com.hx.campus.utils.service.JsonOperate;
-import com.umeng.analytics.MobclickAgent;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.enums.CoreAnim;
 import com.xuexiang.xui.adapter.recyclerview.RecyclerViewHolder;
@@ -54,12 +52,7 @@ import me.samlss.broccoli.Broccoli;
 import okhttp3.Call;
 import okhttp3.Response;
 
-/**
- * 首页动态
- *
- * @author xuexiang
- * @since 2019-10-30 00:15
- */
+
 @Page(anim = CoreAnim.fade)
 public class DynamicFragment extends BaseFragment<FragmentNewsBinding> {
 

@@ -9,12 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
-import com.xuexiang.constant.TimeConstants;
 import com.hx.campus.R;
 import com.hx.campus.core.http.api.ApiService;
 import com.hx.campus.core.http.callback.NoTipCallBack;
 import com.hx.campus.core.http.entity.TipInfo;
 import com.hx.campus.utils.MMKVUtils;
+import com.xuexiang.constant.TimeConstants;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xhttp2.XHttp;
 import com.xuexiang.xhttp2.cache.model.CacheMode;
@@ -25,12 +25,7 @@ import com.zzhoujay.richtext.RichText;
 
 import java.util.List;
 
-/**
- * 小贴士弹窗
- *
- * @author xuexiang
- * @since 2019-08-22 17:02
- */
+
 public class GuideTipsDialog extends BaseDialog implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private static final String KEY_IS_IGNORE_TIPS = "com.hx.campus.widget.key_is_ignore_tips_";

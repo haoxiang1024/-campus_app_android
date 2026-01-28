@@ -6,9 +6,7 @@ import android.os.Environment;
 import java.io.File;
 import java.math.BigDecimal;
 
-/**
- * 获取缓存大小并清理缓存
- */
+
 
 public class CacheClean {
 

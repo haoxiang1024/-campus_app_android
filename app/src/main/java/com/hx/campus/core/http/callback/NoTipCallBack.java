@@ -23,12 +23,7 @@ import com.xuexiang.xhttp2.model.XHttpRequest;
 import com.xuexiang.xutil.common.StringUtils;
 import com.xuexiang.xutil.common.logger.Logger;
 
-/**
- * 不带错误提示的网络请求回调
- *
- * @author xuexiang
- * @since 2019-11-18 23:02
- */
+
 public abstract class NoTipCallBack<T> extends SimpleCallBack<T> {
 
     /**
