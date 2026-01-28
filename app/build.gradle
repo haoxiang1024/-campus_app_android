@@ -1,21 +1,10 @@
-//应用mob插件
-apply plugin: 'com.mob.sdk'
-//应用mob插件
-apply plugin: 'com.mob.sdk'
 apply plugin: 'com.android.application'
 apply plugin: 'img-optimizer'
 //打包时，记得设置true启用
 if (isNeedPackage.toBoolean() && isUseBooster.toBoolean()) {
     apply plugin: 'com.didiglobal.booster'
 }
-MobSDK {
-    appKey "3803bb9f24195"
-    appSecret "53d22a8a08db732553fb32e9a4143752"
-    permissions {
-        exclude "android.permission.READ_CONTACTS", "android.permission.READ_PHONE_STATE"
-    }
-    SMSSDK {}
-}
+
 
 android {
     compileSdkVersion build_versions.compileSdkVersion
