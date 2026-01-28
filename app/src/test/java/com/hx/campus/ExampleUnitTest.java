@@ -15,8 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
+
 import okhttp3.Call;
 import okhttp3.Response;
 
@@ -27,7 +26,6 @@ import okhttp3.Response;
  */
 public class ExampleUnitTest {
     public static String newsKey = "bec633393690881151584f0ce9462ecf";//新闻key
-    EventHandler eventHandler;//事件处理
 
     @Test
     public void addition_isCorrect() {
@@ -83,7 +81,6 @@ public class ExampleUnitTest {
          */
         public static void getVerificationCode(String country, String phone) {
             //获取短信验证码
-            SMSSDK.getVerificationCode(country, phone);
         }
 
         /**
@@ -94,7 +91,6 @@ public class ExampleUnitTest {
          * @param code    验证码
          */
         public static void submitVerificationCode(String country, String phone, String code) {
-            SMSSDK.submitVerificationCode(country, phone, code);
         }
     }
 

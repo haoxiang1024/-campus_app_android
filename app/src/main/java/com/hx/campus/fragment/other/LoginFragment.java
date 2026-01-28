@@ -21,6 +21,9 @@ import com.hx.campus.utils.ResponseMsg;
 import com.hx.campus.utils.SettingUtils;
 import com.hx.campus.utils.TokenUtils;
 import com.hx.campus.utils.Utils;
+import com.hx.campus.utils.api.ApiService;
+import com.hx.campus.utils.api.Result;
+import com.hx.campus.utils.api.RetrofitClient;
 import com.hx.campus.utils.internet.OkHttpCallback;
 import com.hx.campus.utils.internet.OkhttpUtils;
 import com.hx.campus.utils.sdkinit.UMengInit;
@@ -28,6 +31,7 @@ import com.hx.campus.utils.service.JsonOperate;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.enums.CoreAnim;
+import com.xuexiang.xrouter.annotation.AutoWired;
 import com.xuexiang.xui.utils.ThemeUtils;
 import com.xuexiang.xui.utils.ViewUtils;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
@@ -37,7 +41,7 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Response;
-
+import retrofit2.Callback;
 
 
 @Page(anim = CoreAnim.none)
@@ -173,47 +177,40 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
     }
 
     private void login(String phone,String password) {
-        new Thread() {
+        RetrofitClient.getInstance().getApi().login(phone, password).enqueue(new retrofit2.Callback<Result<String>>() {
             @Override
-            public void run() {
-                super.run();
-                OkhttpUtils.get(Utils.rebuildUrl("/loginByPwd?phone=" + phone + "&pwd=" + password,getContext()), new OkHttpCallback() {
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        super.onResponse(call, response);
-                        if(JsonOperate.getValue(result, "msg").equals("登录成功")){
-                            //登录成功
-                            loginMsg = JsonOperate.getValue(result, "data");
-                            //获取信息并存储
-                            Utils.doUserData(loginMsg);
-                            //设置登录token
-                            TokenUtils.setToken(RandomUtils.getRandomLetters(6));
-                            //跳转主界面
-                            ActivityUtils.startActivity(MainActivity.class);
-                        }else {
+            public void onResponse(retrofit2.Call<Result<String>> call, retrofit2.Response<Result<String>> response) {
+                hideLoadingDialog();
 
-                            requireActivity().runOnUiThread(() -> {
-                                hideLoadingDialog();
-                                Utils.showResponse(JsonOperate.getValue(result, "msg"));
-                            });
-                        }
+                // 检查网络连接层是否成功（200 OK）
+                if (response.isSuccessful() && response.body() != null) {
+                    Result<String> result = response.body();
 
+                    // 检查后端业务层是否成功 (status == 0)
+                    if (result.isSuccess()) {
+                        String token = result.getData();
+
+                        // 存储数据并跳转
+                        Utils.doUserData(token);
+                        TokenUtils.setToken(RandomUtils.getRandomLetters(6));
+                        ActivityUtils.startActivity(MainActivity.class);
+                    } else {
+                        // 后端返回的错误信息（如：密码错误）
+                        Utils.showResponse(result.getMsg());
                     }
-
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        super.onFailure(call, e);
-                        Utils.showResponse(Utils.getString(getContext(), R.string.internet_erro));
-
-                    }
-                });
+                } else {
+                    Utils.showResponse("服务器响应异常");
+                }
             }
-        }.start();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
+            @Override
+            public void onFailure(retrofit2.Call<Result<String>> call, Throwable t) {
+                hideLoadingDialog();
+                // 网络断开、超时等物理错误
+                Utils.showResponse("网络连接失败: " + t.getMessage());
+            }
+        });
+
     }
 
     @Override
