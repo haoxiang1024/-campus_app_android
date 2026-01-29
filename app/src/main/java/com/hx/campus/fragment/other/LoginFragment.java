@@ -162,6 +162,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
                     break;
             }
         } catch (Exception e) {
+            Log.e( "onClick: ",e.toString() );
             Utils.showResponse(ResponseMsg.FAIL);
 
         }
@@ -200,6 +201,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
 
             @Override
             public void onFailure(retrofit2.Call<Result<User>> call, Throwable t) {
+                Log.e("LOGIN_ERROR", "失败详情: ", t);
                 Utils.showResponse("网络请求失败");
             }
         });

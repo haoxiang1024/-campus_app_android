@@ -1,5 +1,6 @@
 package com.hx.campus.fragment.dynamic;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -218,9 +219,10 @@ public class DynamicFragment extends BaseFragment<FragmentNewsBinding> {
                 RadiusImageView imageView = holder.findViewById(R.id.riv_item);
                 imageView.setCircle(true);
                 ImageLoader.get().loadImage(imageView, item.getIcon());
-                holder.text(R.id.tv_sub_title, item.getTitle());
+                String title = item.getTitle().toString();
+                holder.text(R.id.tv_title, title.substring(0, 1));
+                holder.text(R.id.tv_sub_title, title);
                 holder.click(R.id.ll_container, v -> {
-                    String title = item.getTitle().toString();
                     if (title.contains("失物")) openNewPage(LostFragment.class, LostFragment.KEY_TITLE_NAME, title);
                     else if (title.contains("招领")) openNewPage(FoundFragment.class, FoundFragment.KEY_TITLE_NAME, title);
                     else if (title.contains("搜索")) openNewPage(SearchFragment.class);
