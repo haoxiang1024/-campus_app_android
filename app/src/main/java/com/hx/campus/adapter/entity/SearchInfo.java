@@ -25,7 +25,7 @@ public class SearchInfo {
 
     private Integer lostfoundtype_id;
 
-    private Lostfoundtype lostfoundtype;
+    private LostFoundType lostfoundtype;
 
     private Integer user_id;
 
@@ -34,7 +34,7 @@ public class SearchInfo {
     public SearchInfo() {
     }
 
-    public SearchInfo(Integer id, String title, String img, Date pub_date, String content, String place, String phone, String state, Integer stick, Integer lostfoundtype_id, Lostfoundtype lostfoundtype, Integer user_id, String nickname) {
+    public SearchInfo(Integer id, String title, String img, Date pub_date, String content, String place, String phone, String state, Integer stick, Integer lostfoundtype_id, LostFoundType lostfoundtype, Integer user_id, String nickname) {
         this.id = id;
         this.title = title;
         this.img = img;
@@ -130,11 +130,11 @@ public class SearchInfo {
         this.lostfoundtype_id = lostfoundtype_id;
     }
 
-    public Lostfoundtype getLostfoundtype() {
+    public LostFoundType getLostfoundtype() {
         return lostfoundtype;
     }
 
-    public void setLostfoundtype(Lostfoundtype lostfoundtype) {
+    public void setLostfoundtype(LostFoundType lostfoundtype) {
         this.lostfoundtype = lostfoundtype;
     }
 

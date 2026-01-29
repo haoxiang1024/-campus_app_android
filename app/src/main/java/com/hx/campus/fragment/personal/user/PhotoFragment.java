@@ -160,7 +160,7 @@ public class PhotoFragment extends BaseFragment<FragmentPhotoBinding> {
                 }
                 String data = JsonOperate.getValue(msg, "data");//获取数据
                 //存储信息
-                Utils.doUserData(data);
+               // Utils.doUserData(data);
                 //跳转主界面
                 startActivity(new Intent(getContext(), MainActivity.class));
                 Utils.showResponse(Utils.getString(getContext(),R.string.modify_success));

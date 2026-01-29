@@ -116,7 +116,7 @@ public class OtherLoginFragment extends BaseFragment<FragmentOtherLoginBinding> 
                             Utils.showResponse(Utils.getString(getContext(),R.string.login_su));
                             getActivity().runOnUiThread(()->hideLoadingDialog());
                             //获取信息并存储
-                            Utils.doUserData(loginMsg);
+                           // Utils.doUserData(loginMsg);
                             //设置登录token
                             TokenUtils.setToken(RandomUtils.getRandomLetters(6));
                             //跳转主界面

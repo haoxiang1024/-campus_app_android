@@ -176,7 +176,7 @@ public class AccountFragment extends BaseFragment<FragmentAccountBinding> implem
                         super.onResponse(call, response);
                         String data = JsonOperate.getValue(result, "data");
                         //更新信息
-                        Utils.doUserData(data);
+                      //  Utils.doUserData(data);
                         startActivity(new Intent(getContext(), MainActivity.class));
                         Utils.showResponse(Utils.getString(getContext(),R.string.modify_success));
                     }

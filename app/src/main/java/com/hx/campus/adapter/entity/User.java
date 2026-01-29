@@ -7,67 +7,76 @@ import java.util.Objects;
 
 
 public class User implements Serializable {
-  
     private Integer id;
-
-  
-
-
-  
     private String password;
-
-  
     private String nickname;
-
-  
     private String photo;
-
-  
     private String sex;
-
-  
     private String phone;
-
-  
     private Integer balance;
-
-  
     private Integer prestige;
-
-  
     private Date reg_date;
+    private String email;
+    private int state;
+    private int role;
 
-    public User(Integer id, String password, String nickname, String photo, String sex, String phone, Integer balance, Integer prestige, Date reg_date) {
-        this.id = id;
-        this.password = password;
-        this.nickname = nickname;
-        this.photo = photo;
-        this.sex = sex;
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public int getstate() {
+        return state;
+    }
+
+    public void setstate(int state) {
+        this.state = state;
+    }
+
+    public User(String phone, String password, String email) {
         this.phone = phone;
+        this.password = password;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public User(String photo, String phone, String sex, Integer balance, Integer prestige, Date reg_date, String email, int state, int role, String nickname, String password) {
+        this.photo = photo;
+        this.phone = phone;
+        this.sex = sex;
         this.balance = balance;
         this.prestige = prestige;
         this.reg_date = reg_date;
+        this.email = email;
+        this.state = state;
+        this.role = role;
+        this.nickname = nickname;
+        this.password = password;
     }
 
     public User() {
     }
 
-    public User(int id, String nickname, String photo, String sex, String phone, Date reg_date) {
-        this.id = id;
-        this.nickname = nickname;
-        this.photo = photo;
-        this.sex = sex;
-        this.phone = phone;
-        this.reg_date = reg_date;
-    }
-
-
-  
+    /**
+     *
+     */
     public Integer getId() {
         return id;
     }
 
-  
+    /**
+     *
+     */
     public void setId(Integer id) {
         this.id = id;
     }
@@ -76,52 +85,72 @@ public class User implements Serializable {
         return password;
     }
 
-  
+    /**
+     *
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
-  
+    /**
+     *
+     */
     public String getNickname() {
         return nickname;
     }
 
-  
+    /**
+     *
+     */
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
-  
+    /**
+     *
+     */
     public String getPhoto() {
         return photo;
     }
 
-  
+    /**
+     *
+     */
     public void setPhoto(String photo) {
         this.photo = photo;
     }
 
-  
+    /**
+     *
+     */
     public String getSex() {
         return sex;
     }
 
-  
+    /**
+     *
+     */
     public void setSex(String sex) {
         this.sex = sex;
     }
 
-  
+    /**
+     *
+     */
     public String getPhone() {
         return phone;
     }
 
-  
+    /**
+     *
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-  
+    /**
+     *
+     */
 
     public Integer getBalance() {
         return balance;
@@ -131,37 +160,32 @@ public class User implements Serializable {
         this.balance = balance;
     }
 
-  
+    /**
+     *
+     */
     public Integer getPrestige() {
         return prestige;
     }
 
-  
+    /**
+     *
+     */
     public void setPrestige(Integer prestige) {
         this.prestige = prestige;
     }
 
-  
+    /**
+     *
+     */
     public Date getReg_date() {
         return reg_date;
     }
 
-  
+    /**
+     *
+     */
     public void setReg_date(Date reg_date) {
         this.reg_date = reg_date;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(password, user.password) && Objects.equals(nickname, user.nickname) && Objects.equals(photo, user.photo) && Objects.equals(sex, user.sex) && Objects.equals(phone, user.phone) && Objects.equals(balance, user.balance) && Objects.equals(prestige, user.prestige) && Objects.equals(reg_date, user.reg_date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, password, nickname, photo, sex, phone, balance, prestige, reg_date);
     }
 
     @Override
@@ -176,6 +200,8 @@ public class User implements Serializable {
                 ", balance=" + balance +
                 ", prestige=" + prestige +
                 ", reg_date=" + reg_date +
+                ", email='" + email + '\'' +
+                ", state=" + state +
                 '}';
     }
 }

@@ -26,6 +26,7 @@ import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.ColorInt;
@@ -342,19 +343,9 @@ public final class Utils {
     }
     //获取服务端返回的用户数据并存储
 
-    /**
-     * @param data 服务端返回的数据
-     * @return 重构的user对象
-     */
-    public static void doUserData(String data) {
-        JSONObject jsonObject = (JSONObject) JSON.parse(data);
-        int id = (int) jsonObject.get("id");
-        String nickname = (String) jsonObject.get("nickname");
-        String phone = (String) jsonObject.get("phone");
-        String photo = (String) jsonObject.get("photo");
-        String sex = (String) jsonObject.get("sex");
-        Date reg_date = jsonObject.getDate("reg_date");
-        User user = new User(id, nickname, photo, sex, phone, reg_date);
+
+    public static void doUserData(User user) {
+        if (user == null) return;
         //存储SharedPreferences以便之后调用
         Utils.saveBean2Sp(getContext(), user, "User", "user");
     }

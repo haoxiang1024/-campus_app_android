@@ -5,14 +5,17 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
+import com.alibaba.fastjson.JSON;
 import com.hx.campus.R;
 import com.hx.campus.activity.MainActivity;
+import com.hx.campus.adapter.entity.User;
 import com.hx.campus.core.BaseFragment;
 import com.hx.campus.databinding.FragmentLoginBinding;
 import com.hx.campus.utils.LoadingDialog;
@@ -134,7 +137,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
             switch (id) {
                 case R.id.btn_login:
                     // 登录
-                    showLoadingDialog();//显示加载动画
+                    //showLoadingDialog();//显示加载动画
                     if (binding.etPhoneNumber.validate() && binding.etPassword.validate()) {
                         //校验成功进行登录
                         Login();
@@ -176,43 +179,31 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
 
     }
 
-    private void login(String phone,String password) {
-        RetrofitClient.getInstance().getApi().login(phone, password).enqueue(new retrofit2.Callback<Result<String>>() {
+    private void login(String phone, String password) {
+        RetrofitClient.getInstance().getApi().login(phone, password).enqueue(new retrofit2.Callback<Result<User>>() {
             @Override
-            public void onResponse(retrofit2.Call<Result<String>> call, retrofit2.Response<Result<String>> response) {
-                hideLoadingDialog();
-
-                // 检查网络连接层是否成功（200 OK）
-                if (response.isSuccessful() && response.body() != null) {
-                    Result<String> result = response.body();
-
-                    // 检查后端业务层是否成功 (status == 0)
+            public void onResponse(retrofit2.Call<Result<User>> call, retrofit2.Response<Result<User>> response) {
+                if (response.body() != null) {
+                    Result<User> result = response.body();
                     if (result.isSuccess()) {
-                        String token = result.getData();
-
-                        // 存储数据并跳转
-                        Utils.doUserData(token);
+                        User user = response.body().getData();
+                        Utils.doUserData(user);
                         TokenUtils.setToken(RandomUtils.getRandomLetters(6));
                         ActivityUtils.startActivity(MainActivity.class);
                     } else {
-                        // 后端返回的错误信息（如：密码错误）
                         Utils.showResponse(result.getMsg());
                     }
                 } else {
-                    Utils.showResponse("服务器响应异常");
+                    Utils.showResponse("服务器响应为空");
                 }
             }
 
             @Override
-            public void onFailure(retrofit2.Call<Result<String>> call, Throwable t) {
-                hideLoadingDialog();
-                // 网络断开、超时等物理错误
-                Utils.showResponse("网络连接失败: " + t.getMessage());
+            public void onFailure(retrofit2.Call<Result<User>> call, Throwable t) {
+                Utils.showResponse("网络请求失败");
             }
         });
-
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();

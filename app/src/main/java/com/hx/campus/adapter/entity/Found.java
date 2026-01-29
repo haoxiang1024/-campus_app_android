@@ -28,7 +28,7 @@ public class Found {
 
     private Integer user_id;
     private String nickname;
-    private Lostfoundtype lostfoundtype;
+    private LostFoundType lostfoundtype;
 
     public Found(String title, String img, Date pub_date, String content, String place, String phone, String state, String nickname) {
         this.title = title;
@@ -41,11 +41,11 @@ public class Found {
         this.nickname = nickname;
     }
 
-    public Lostfoundtype getLostfoundtype() {
+    public LostFoundType getLostfoundtype() {
         return lostfoundtype;
     }
 
-    public void setLostfoundtype(Lostfoundtype lostfoundtype) {
+    public void setLostfoundtype(LostFoundType lostfoundtype) {
         this.lostfoundtype = lostfoundtype;
     }
 
